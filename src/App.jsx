@@ -1,23 +1,50 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
-
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <div className="landing-container">
-      <h1 className="title">Bizim Projelerimiz</h1>
-      <p className="subtitle">
-        Yaptığımız çalışmaları keşfetmek için aşağıdan bir proje seçin.
-      </p>
-      <div className="buttons">
-        <a href="/construction/index.html" className="project-button" target="_blank">
-          🚧 Construction Şirketi Sitesi
-        </a>
-        <a href="/shipping/index.html" className="project-button" target="_blank">
-          🚢 Kargo & Lojistik Sitesi
-        </a>
+    <div className="container">
+      <nav className="navbar">
+        <div className="nav__logo">
+          <img src="/assets/Vector.svg" alt="logo" />
+        </div>
+        <ul className={`nav__links ${menuOpen ? "active" : ""}`}>
+          <li className="link">
+            <a href="/construction/index.html" target="_blank" rel="noopener noreferrer">
+              Construction
+            </a>
+          </li>
+          <li className="link">
+            <a href="/shipping/index.html" target="_blank" rel="noopener noreferrer">
+              Shipping
+            </a>
+          </li>
+          <li className="link">
+            <a href="https://asmanexpress.com" target="_blank" rel="noopener noreferrer">
+              AsmanExpress
+            </a>
+          </li>
+        </ul>
+        <div className="nav__toggle" onClick={() => setMenuOpen(!menuOpen)}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+
+      <div className="destination__container">
+        <img className="bg__img__1" src="/assets/bg-dots.png" alt="bg" />
+        <div className="content">
+          <h1>YASH<br />ENGINEER<br /><span>GROUP</span></h1>
+          <p>
+            “Ýaş Inžiner” is a visionary company integrating advanced technology
+            and sustainable innovation to develop future-ready infrastructure
+            across construction, architecture, logistics, and e-commerce,
+            setting new standards of quality and reliability.
+          </p>
+        </div>
       </div>
     </div>
   );
