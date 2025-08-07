@@ -12,12 +12,12 @@ function App() {
         </div>
         <ul className={`nav__links ${menuOpen ? "active" : ""}`}>
           <li className="link">
-            <a href="/construction/index.html" target="_blank" rel="noopener noreferrer">
+            <a href="/construction/index.html" rel="noopener noreferrer">
               Construction
             </a>
           </li>
           <li className="link">
-            <a href="/shipping/index.html" target="_blank" rel="noopener noreferrer">
+            <a href="/shipping/index.html" rel="noopener noreferrer">
               Shipping
             </a>
           </li>
@@ -47,7 +47,9 @@ function App() {
         </div>
       </div>
     </div>
+    
   );
 }
 
 export default App;
+
